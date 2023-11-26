@@ -17,12 +17,6 @@
 
 ---
 
-## README.md
-
-
-
----
-
 ## linux-os-2.md
 
 # Linux OS
