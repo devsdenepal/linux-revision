@@ -18,7 +18,7 @@ jobs:
           python update_readme.py  # Replace with your script name if different
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          repository: ./main
+          repository: ./
           commit_user_name: devsdenepal # defaults to "github-actions[bot]"
           commit_user_email: gautamn7822@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
           commit_message: "✅ UPDATE README "
