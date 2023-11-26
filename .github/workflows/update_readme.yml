@@ -16,14 +16,10 @@ jobs:
       - name: Run Python script to update README
         run: |
           python update_readme.py  # Replace with your script name if different
-
-      - name: Commit changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.YOUR_PAT_SECRET }}
-          USERNAME: ${{ github.repository_owner }}
-        run: |
-         # git config user.name github-actions
-          # git config user.email github-actions@github.com
-          git add README.md
-          git commit -m "Update README via GitHub Action"
-          git push origin main
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          repository: ./main
+          commit_user_name: devsdenepal # defaults to "github-actions[bot]"
+          commit_user_email: gautamn7822@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_message: "✅ UPDATE README <-- ${{ env.NEPALI_TIME }} ⌚"
+          #push_options: '--force'
