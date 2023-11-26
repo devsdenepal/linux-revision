@@ -18,9 +18,11 @@ jobs:
           python update_readme.py  # Replace with your script name if different
 
       - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.YOUR_PAT_SECRET }}
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
           git add README.md
           git commit -m "Update README via GitHub Action"
-          git push
+          git push origin main
