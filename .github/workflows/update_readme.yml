@@ -21,5 +21,5 @@ jobs:
           repository: ./main
           commit_user_name: devsdenepal # defaults to "github-actions[bot]"
           commit_user_email: gautamn7822@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_message: "✅ UPDATE README <-- ${{ env.NEPALI_TIME }} ⌚"
+          commit_message: "✅ UPDATE README "
           #push_options: '--force'
