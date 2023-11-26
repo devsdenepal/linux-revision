@@ -22,8 +22,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.YOUR_PAT_SECRET }}
           USERNAME: ${{ github.repository_owner }}
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+         # git config user.name github-actions
+          # git config user.email github-actions@github.com
           git add README.md
           git commit -m "Update README via GitHub Action"
           git push origin main
