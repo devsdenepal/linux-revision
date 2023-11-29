@@ -13,13 +13,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Replace with your Python version if needed
+
+      - name: Install markdown library
+        run: |
+          python -m pip install --upgrade pip
+          pip install markdown
+
       - name: Run Python script to update README
         run: |
           python update_readme.py  # Replace with your script name if different
-      - uses: stefanzweifel/git-auto-commit-action@v5
+
+      - name: Commit changes to repository
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           repository: ./
-          commit_user_name: devsdenepal # defaults to "github-actions[bot]"
-          commit_user_email: gautamn7822@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_message: "✅ UPDATE README "
-          #push_options: '--force'
+          commit_user_name: devsdenepal
+          commit_user_email: gautamn7822@gmail.com
+          commit_message: "✅ UPDATE README"
