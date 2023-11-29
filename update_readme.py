@@ -8,7 +8,7 @@ markdown_files = [file for file in os.listdir('.') if file.endswith('.md')]
 with open('README.md', 'w') as readme:
     for file_name in markdown_files:
         if file_name == "README.md":
-            with open(file_name, 'r') as md_file:
+            with open('index.html', 'r') as md_file:
                 md_content = md_file.read()
                 # Convert Markdown to HTML
                 html_content = markdown.markdown(md_content)
