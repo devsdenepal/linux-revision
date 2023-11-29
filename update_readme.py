@@ -1,4 +1,5 @@
 import os
+import markdown
 
 # List all Markdown files in the repository
 markdown_files = [file for file in os.listdir('.') if file.endswith('.md')]
@@ -10,8 +11,13 @@ with open('README.md', 'w') as readme:
             print('Skipping README.md')  # Added print statement for clarity
         else:    
             with open(file_name, 'r') as md_file:
-                content = md_file.read()
+                md_content = md_file.read()
+                # Convert Markdown to HTML
+                html_content = markdown.markdown(md_content)
+                # Write HTML content to a new file
+                with open(file_name.replace('.md','.html'), 'w') as html_file:
+                    html_file.write(html_content)
                 # Write content to README.md
                 readme.write(f"## {file_name}\n\n")
-                readme.write(content)
+                readme.write(md_content)
                 readme.write('\n\n---\n\n')  # Separation between files
